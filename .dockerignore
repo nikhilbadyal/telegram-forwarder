@@ -1,0 +1,9 @@
+.editorconfig
+.gitattributes
+.github
+.gitignore
+.idea
+.pre-commit-config.yaml
+venv
+README*
+htmlcov
