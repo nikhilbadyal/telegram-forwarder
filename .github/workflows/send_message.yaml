@@ -1,0 +1,23 @@
+name: Telegram Forwarder
+
+env:
+  DOCKER_BUILDKIT: 1
+  COMPOSE_DOCKER_CLI_BUILD: 1
+
+on: [ push , pull_request ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout to repository
+      uses: actions/checkout@master
+    - name: Run pre-commit
+      uses: pre-commit/action@v2.0.3
+    - name: Send Telegram Message
+      uses: ./
+      with:
+        token: ${{ secrets.token }}
+        message: ${{ secrets.message }}
+        recipient: ${{ secrets.recipient }}
