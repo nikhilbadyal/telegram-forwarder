@@ -1,0 +1,25 @@
+name: 'Telegram Notifier'
+author: 'Nikhil Badyal'
+description: 'Send a message to telegram'
+inputs:
+    token:
+        required: true
+        description: 'Telegram Bot Token'
+    message:
+        required: false
+        description: 'Message to be sent'
+        default: 'Action Finished'
+    recipient:
+        required: true
+        description: 'Receiver of the message'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
+    env:
+        BOT_TOKEN: ${{ inputs.token }}
+        MESSAGE: ${{ inputs.message }}
+        RECIPIENT: ${{ inputs.recipient }}
+
+branding:
+  icon: 'send'
+  color: 'blue'
