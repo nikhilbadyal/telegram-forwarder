@@ -1,0 +1,4 @@
+dockerfile: Dockerfile
+recursive: true
+ignored:
+  - DL3008
