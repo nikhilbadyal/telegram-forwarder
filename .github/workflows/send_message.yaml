@@ -13,8 +13,6 @@ jobs:
     steps:
     - name: Checkout to repository
       uses: actions/checkout@master
-    - name: Run pre-commit
-      uses: pre-commit/action@v2.0.3
     - name: Send Telegram Message
       uses: ./
       with:
